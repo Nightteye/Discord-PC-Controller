@@ -22,8 +22,8 @@ A powerful, secure, and feature-rich Discord bot that allows you to remotely con
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/[REPO_NAME].git
-    cd [REPO_NAME]
+    git clone https://github.com/Nightteye/Discord-PC-Controller/Discord-PC-Controller.git
+    cd Discord-PC-Controller
     ```
 
 2.  **Install Dependencies**
