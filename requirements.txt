@@ -1,0 +1,12 @@
+discord.py
+python-dotenv
+pyautogui
+opencv-python
+pyttsx3
+psutil
+requests
+comtypes
+pycaw
+rotate-screen
+pyperclip
+pillow

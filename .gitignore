@@ -1,0 +1,17 @@
+# Security: NEVER upload your secrets
+.env
+
+# Local Data: Do not upload your personal blacklist
+blacklist.json
+
+# Python system files
+__pycache__/
+*.pyc
+
+# Local image temp files
+*.jpg
+*.png
+
+# Virtual Environments (if you use them)
+env/
+venv/
