@@ -1,24 +1,24 @@
-# 🎮 Discord PC Remote Controller
+# [Controller] Discord PC Remote Controller
 
 A powerful, secure, and feature-rich Discord bot that allows you to remotely control and monitor your Windows PC from anywhere using Discord slash commands.
 
-## ✨ Features
+## [*] Features
 
-* **🛡️ Secure Authentication:** Session-based access with a secret passphrase and auto-lockout timer.
-* **📸 Visuals:** Take screenshots (`/screen`) and webcam photos (`/cam`) instantly.
-* **🔊 Audio Control:** Adjust volume, play/pause media, and make the PC speak (`/say`).
-* **💻 System Control:** Remote locking (`/lock`), sleep (`/sleep`), and monitor blackout (`/blackout`).
-* **📍 Anti-Theft:** Get approximate (IP) or precise (GPS/Wi-Fi) location (`/locate`, `/gps`).
-* **🛠️ Power User Tools:** Execute shell commands (`/cmd`), launch apps (`/launch`), and view system health (`/status`).
-* **🚫 Intruder Trap:** Automatically blacklists and alerts the owner if someone guesses the password.
+* **[Security] Secure Authentication:** Session-based access with a secret passphrase and auto-lockout timer.
+* **[Visuals] Visuals:** Take screenshots (`/screen`) and webcam photos (`/cam`) instantly.
+* **[Audio] Audio Control:** Adjust volume, play/pause media, and make the PC speak (`/say`).
+* **[System] System Control:** Remote locking (`/lock`), sleep (`/sleep`), and monitor blackout (`/blackout`).
+* **[Location] Anti-Theft:** Get approximate (IP) or precise (GPS/Wi-Fi) location (`/locate`, `/gps`).
+* **[Tools] Power User Tools:** Execute shell commands (`/cmd`), launch apps (`/launch`), and view system health (`/status`).
+* **[Alert] Intruder Trap:** Automatically blacklists and alerts the owner if someone guesses the password.
 
-## ⚠️ Requirements
+## [!] Requirements
 
 * **OS:** Windows 10/11 (Required for audio/shell commands)
 * **Python:** 3.8 or higher
 * **Discord Account:** with Developer Mode enabled
 
-## 🚀 Installation
+## [Setup] Installation
 
 1.  **Clone the Repository**
     ```bash
@@ -44,7 +44,7 @@ A powerful, secure, and feature-rich Discord bot that allows you to remotely con
     python bot.py
     ```
 
-## 📖 Usage Guide
+## [Guide] Usage Guide
 
 1.  **Start the Bot:** Run the script on your PC.
 2.  **Authenticate:** In Discord, type `/auth password:[your_secret_phrase]`.
@@ -62,7 +62,7 @@ A powerful, secure, and feature-rich Discord bot that allows you to remotely con
 | `/say` | Uses TTS to speak a message on the PC speakers. |
 | `/locate` | Finds the PC location via IP Address. |
 
-## 🛡️ Security Features
+## [Security] Security Features
 
 This bot is designed with "Paranoid Security" in mind:
 * **Hard-coded Owner Check:** Even with the password, only the `OWNER_ID` can log in.
@@ -72,7 +72,7 @@ This bot is designed with "Paranoid Security" in mind:
 * **Zero-Leak Logging:** Alerts sent to the owner are sanitized to ensure the master password is never stored in Discord's message history.
 * **Open-Source Ready:** Sensitive data is isolated in local `.env` and `blacklist.json` files, meaning this repository is safe to fork and deploy out-of-the-box.
 
-## 📄 License
+## [Doc] License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
