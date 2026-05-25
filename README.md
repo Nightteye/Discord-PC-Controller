@@ -68,6 +68,9 @@ This bot is designed with "Paranoid Security" in mind:
 * **Hard-coded Owner Check:** Even with the password, only the `OWNER_ID` can log in.
 * **Honeypot System:** Strangers who guess the password are instantly banned.
 * **Owner Immunity:** The code prevents the owner from accidentally banning themselves.
+* **Anti-Timing Attacks:** Uses constant-time string comparison (`secrets.compare_digest`) for authentication.
+* **Zero-Leak Logging:** Alerts sent to the owner are sanitized to ensure the master password is never stored in Discord's message history.
+* **Open-Source Ready:** Sensitive data is isolated in local `.env` and `blacklist.json` files, meaning this repository is safe to fork and deploy out-of-the-box.
 
 ## 📄 License
 
