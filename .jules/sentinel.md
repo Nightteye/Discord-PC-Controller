@@ -1,0 +1,4 @@
+## 2024-05-18 - [Critical] Prevent password leak in alert logs and mitigate timing attacks
+**Vulnerability:** The application was exposing the secret password in plaintext in Discord DM alerts whenever an unauthorized user attempted to authenticate. Additionally, the password comparison was vulnerable to timing attacks due to the use of a standard string equality operator.
+**Learning:** Even internal alerting mechanisms (like DMs to the owner) must not contain sensitive plaintext data (passwords, tokens, API keys). Furthermore, when comparing secrets, using standard equality operators is unsafe; constant-time comparison is necessary.
+**Prevention:** Always sanitize logs, alerts, and error messages to remove sensitive information. Use `secrets.compare_digest` for comparing any security-sensitive strings or tokens in Python.

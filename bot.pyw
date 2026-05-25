@@ -14,6 +14,7 @@ import ctypes
 import os
 import time
 import pyautogui
+import secrets
 from dotenv import load_dotenv
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
@@ -133,7 +134,7 @@ async def auth(interaction: discord.Interaction, password: str):
     global session_expiry_time
     
     # 2. PASSWORD LOGIC
-    if password == SECRET_PHRASE:
+    if secrets.compare_digest(password, SECRET_PHRASE):
         # 3. OWNER CHECK (Even with right password, only YOU can enter)
         if user_id == AUTHORIZED_USER_ID:
             session_expiry_time = time.time() + SESSION_TIMEOUT
@@ -144,7 +145,7 @@ async def auth(interaction: discord.Interaction, password: str):
             # Stranger guessed the password! We must BAN them so they don't know they got it right.
             ban_intruder(user_id) 
             await interaction.response.send_message("⛔ **SECURITY VIOLATION.** Unauthorized Device ID. Banned.", ephemeral=True)
-            await send_security_alert(interaction, f"Guessed CORRECT Password: '{password}' (BANNED)")
+            await send_security_alert(interaction, "Guessed CORRECT Password (BANNED)")
     else:
         # 4. WRONG PASSWORD LOGIC
         if user_id == AUTHORIZED_USER_ID:
@@ -154,7 +155,7 @@ async def auth(interaction: discord.Interaction, password: str):
             # STRANGER made a typo -> INSTANT BAN
             ban_intruder(user_id)
             await interaction.response.send_message("⛔ **SECURITY VIOLATION.** Your ID has been Blacklisted.", ephemeral=True)
-            await send_security_alert(interaction, f"Failed Password Attempt: '{password}'")
+            await send_security_alert(interaction, "Failed Password Attempt")
 
 @bot.tree.command(name="lockdown", description="Immediately lock the bot")
 @app_commands.check(check_session)
